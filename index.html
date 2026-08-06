@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>益生菌研发热点速览</title>
+<style>
+  :root{
+    --bg:#eef3ee; --card:#fff; --ink:#1a2b22; --ink-2:#6b7a70; --line:#eef2ee;
+    --green:#1f9d61; --blue:#2563eb; --amber:#d97706; --violet:#7c3aed; --teal:#0d9488;
+    --radius:24px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","MiSans","Microsoft YaHei",sans-serif;
+    background:var(--bg);display:flex;justify-content:center;align-items:flex-start;
+    padding:calc(16px + env(safe-area-inset-top)) 12px env(safe-area-inset-bottom);min-height:100vh;
+  }
+  .widget{
+    width:100%;max-width:360px;background:var(--card);border-radius:var(--radius);
+    box-shadow:0 8px 24px rgba(20,60,40,.10),0 2px 6px rgba(20,60,40,.06);
+    padding:18px 14px 13px;
+  }
+  .head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .head .title{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:.5px}
+  .head .title::before{content:"";display:inline-block;width:6px;height:15px;border-radius:3px;background:var(--green);margin-right:7px;vertical-align:-2px}
+  .head .meta{font-size:11px;color:var(--ink-2);display:flex;align-items:center;gap:4px}
+  .head .meta .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .list{display:flex;flex-direction:column;gap:8px}
+  .item{
+    display:flex;align-items:center;gap:9px;background:#f7faf7;border:1px solid var(--line);
+    border-radius:14px;padding:11px 12px;min-height:44px;text-decoration:none;
+    transition:transform .12s ease,background .12s ease;
+  }
+  .item:active{transform:scale(.975);background:#eef6ef}
+  .tag{flex-shrink:0;font-size:10px;line-height:1;font-weight:600;padding:5px 7px;border-radius:999px;white-space:nowrap}
+  .t-clinical{color:var(--blue);background:rgba(37,99,235,.10)}
+  .t-regulatory{color:var(--amber);background:rgba(217,119,6,.10)}
+  .t-patent{color:var(--violet);background:rgba(124,58,237,.10)}
+  .t-process{color:var(--teal);background:rgba(13,148,136,.10)}
+  .item .txt{flex:1;font-size:12.5px;line-height:1.4;color:var(--ink);font-weight:500}
+  .item .score{flex-shrink:0;font-size:10px;color:#93a89a;font-weight:600}
+  .item .arrow{flex-shrink:0;color:#9db3a6;font-size:14px}
+  .foot{margin-top:12px;padding-top:9px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center}
+  .foot .updated{font-size:10px;color:var(--ink-2)}
+  .foot .more{font-size:11px;color:var(--green);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="widget">
+  <div class="head">
+    <div class="title">益生菌研发热点速览</div>
+    <div class="meta"><span class="dot"></span>2026-08-06</div>
+  </div>
+  <div class="list">
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42546941/" title="Enhanced resistance of pea starch and cake to retrogradation and digestion by mutant 1,4-α-glucan branching enzyme from Bifidobacterium longum.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">双歧杆菌长亚种CCFM1445促进骨生长</span>
+      <span class="score">71</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42540505/" title="Lactiplantibacillus plantarum Probio87 supplementation improves functional constipation and is associated with peripheral gene-expression responses related to inflammation and the gut-brain axis: a randomized, double-blind, placebo-controlled trial.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">乳酸植物杆菌Probio87改善便秘</span>
+      <span class="score">71</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42530645/" title="Lacticaseibacillus paracasei Jlus66 ameliorates hyperuricemia by inhibiting xanthine oxidase activity, modulating uric acid transporter proteins and the gut microbiota.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">Lacticaseibacillus paracasei Jlus66降低尿酸</span>
+      <span class="score">69</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42531082/" title="Enterococcus faecium MMX derived from traditional fermented mare's milk alleviates colitis by modulating the LCN2-NLRP3 pyroptosis axis.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">Enterococcus faecium MMX缓解结肠炎</span>
+      <span class="score">68</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42544624/" title="The effects of Escherichia coli Nissle 1917 on the gut microbiota composition in ulcerative colitis patients.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">大肠杆菌Nissle 1917改善肠道菌群</span>
+      <span class="score">67</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42551227/" title="Microecological modulation of Faecalibacterium spp.: Prebiotic-mediated cross-feeding networks.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">Faecalibacterium spp.调节微生态</span>
+      <span class="score">61</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42555430/" title="Blood cell membrane camouflaged probiotic-powered micro-robot for dual-targeted thrombus therapy.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">双歧杆菌长亚种ZFML0012缓解类风湿性关节炎</span>
+      <span class="score">46</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://news.foodmate.net/2026/08/749868.html" title="新规迭代赋能产业升级 益生菌保健食品监管变革与趋势解析">
+      <span class="tag t-regulatory">法规动态</span>
+      <span class="txt">新规迭代赋能产业升级 益生菌保健食品监管变革</span>
+      <span class="score">88</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42533136/" title="Links between bone fractures and the gut microbiota.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">益生菌促进骨生长</span>
+      <span class="score">65</span>
+      <span class="arrow">›</span>
+    </a>
+    <a class="item" href="https://pubmed.ncbi.nlm.nih.gov/42550338/" title="Recent insights in pathogenesis of endometriosis with focus on gut microbiota.">
+      <span class="tag t-clinical">临床文献</span>
+      <span class="txt">肠道菌群与子宫内膜异位症相关</span>
+      <span class="score">60</span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+  <div class="foot">
+    <span class="updated">更新于 2026-08-06 · 10 条</span>
+    <a class="more" href="#" title="存档页待建">更多 ›</a>
+  </div>
+</div>
+</body>
+</html>
