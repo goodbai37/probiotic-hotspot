@@ -244,8 +244,10 @@ async function presentSlides() {
     }
     return true;
   };
-  await wv.loadHTML(buildSlidesHTML(items), null, new Size(), true);
-  await wv.present();
+  // 必须传有效 Size (不能 new Size() 无参, 否则报
+  // "expected value of type number but got undefined")
+  const screen = Device.screenSize();
+  await wv.loadHTML(buildSlidesHTML(items), "", new Size(screen.width, screen.height), true);
 }
 
 // ---------- 入口 ----------
