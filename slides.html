@@ -43,6 +43,17 @@
     font-size:27px;font-weight:800;line-height:1.45;
     overflow-wrap:anywhere;word-break:break-word;
   }
+  .brief{
+    margin-top:18px;
+    background:rgba(31,157,97,.07);border-left:3px solid rgba(31,157,97,.5);
+    border-radius:8px;padding:12px 14px;
+    font-size:14.5px;line-height:1.65;color:#3d5547;
+    overflow-wrap:anywhere;word-break:break-word;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;
+  }
+  @media (prefers-color-scheme:dark){.brief{background:rgba(52,211,153,.08);color:#9fb8a8}}
+  .brief b{color:var(--ink,#1a2b22);font-weight:700}
+  @media (prefers-color-scheme:dark){.brief b{color:#e5e7eb}}
   .meta{
     font-size:14px;color:#6b7a70;margin-top:20px;line-height:1.5;
     overflow-wrap:anywhere;word-break:break-word;
@@ -113,6 +124,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
       return `<a class="card" style="left:${i * W}px;width:${W}px" href="${esc(it.url || "#")}" data-idx="${i}">
         <div class="tag" style="color:${tagColor};background:${tagBg}">${tagText}</div>
         <div class="title">${esc(it.text || it.title || "")}</div>
+        ${it.abstract ? `<div class="brief">💡 <span>${esc(it.abstract)}</span></div>` : ""}
         <div class="meta">${esc([it.journal, it.date].filter(Boolean).join("  ·  "))}</div>
         <div class="score-wrap">
           <span class="score-label">热度</span>

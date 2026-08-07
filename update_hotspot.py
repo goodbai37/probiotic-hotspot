@@ -921,7 +921,9 @@ def main() -> int:
     records.append({"date": today, "items": [
         {"text": it["text"], "tag": it["tag"], "url": it["url"], "source": it["source"],
          "journal": it.get("journal", ""), "date": it.get("date", ""),
-         "score": it.get("score"), "score_detail": it.get("score_detail")}
+         "score": it.get("score"), "score_detail": it.get("score_detail"),
+         # 摘要要点: 取结论/结果段, 供滑动卡片展示重点信息
+         "abstract": smart_abst(it.get("abstract") or "", 320)}
         for it in top
     ]})
     DATA_JSON.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
