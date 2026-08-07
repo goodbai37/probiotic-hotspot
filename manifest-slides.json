@@ -1,0 +1,26 @@
+{
+  "name": "益生菌热点 · 滑动浏览",
+  "short_name": "热点滑动",
+  "description": "每日自动更新的益生菌研发热点，左右滑动浏览词条，点击直达原文",
+  "start_url": "/slides.html",
+  "display": "standalone",
+  "background_color": "#eef3ee",
+  "theme_color": "#1f9d61",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "medical", "science"]
+}

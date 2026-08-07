@@ -1,9 +1,11 @@
 // Service Worker - 离线缓存 & 后台更新
-const CACHE_NAME = 'probiotic-hotspot-v1';
+const CACHE_NAME = 'probiotic-hotspot-v2';
 const STATIC_ASSETS = [
   '/widget.html',
   '/archive.html',
+  '/slides.html',
   '/manifest.json',
+  '/manifest-slides.json',
   '/icon-192.png',
   '/icon-512.png'
 ];
