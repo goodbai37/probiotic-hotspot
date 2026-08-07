@@ -2,19 +2,20 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: blue; icon-glyph: pills;
 // ============================================================
-// 益生菌热点速览 · 主屏幕小组件 + 滑动浏览 (Scriptable) v4
+// 益生菌热点速览 · 主屏幕小组件 + 滑动浏览 (Scriptable) v5
 // 数据源: https://goodbai37.github.io/probiotic-hotspot/data.json
 //
 // 两种模式:
 //   1) 主屏幕小组件: 简洁显示前 2-4 条, 点击标题/底部进入全屏浏览
 //   2) 运行模式 (Scriptable 里点 ▶ 或点小组件):
-//      全屏左右滑动卡片, 每页一张词条 (WebView + scroll-snap,
-//      兼容所有 Scriptable 版本, 不依赖新版 Page API)
+//      用 WebView.loadURL 加载线上滑动页面 slides.html
+//      (滑动界面由网页维护, 以后改版无需再更新脚本!)
 //
 // 更新: 每日 00:30 自动刷新
 // ============================================================
 
 const DATA_URL = "https://goodbai37.github.io/probiotic-hotspot/data.json";
+const SLIDES_URL = "https://goodbai37.github.io/probiotic-hotspot/slides.html";
 const MAX_ITEMS = { small: 2, medium: 3, large: 4 }; // 小组件显示条数
 const RUN_URL = "scriptable:///run?scriptName=probiotic-widget"; // 打开全屏滑动
 
@@ -151,103 +152,22 @@ async function createWidget() {
   return widget;
 }
 
-// ---------- 模式2: 全屏左右滑动卡片 (WebView + scroll-snap) ----------
-function buildSlidesHTML(items) {
-  const cards = items.map((it, i) => {
-    const isReg = it.tag === "法规动态";
-    const tagText = isReg ? "⚖️ 法规动态" : "🔬 相关文献";
-    const tagColor = isReg ? "#d97706" : "#2563eb";
-    const tagBg = isReg ? "rgba(217,119,6,.12)" : "rgba(37,99,235,.10)";
-    const title = esc(it.text || it.title || "");
-    const meta = esc([it.journal, it.date].filter(Boolean).join("  ·  "));
-    const score = esc(String(it.score ?? "—"));
-    const url = esc(it.url || "#");
-    const idx = i + 1;
-    return `
-      <a class="card" href="${url}">
-        <div class="tag" style="color:${tagColor};background:${tagBg}">${tagText}</div>
-        <div class="title">${title}</div>
-        <div class="meta">${meta}</div>
-        <div class="score-wrap">
-          <span class="score-label">热度</span>
-          <span class="score" style="color:${tagColor}">${score}</span>
-        </div>
-        <div class="open">查看原文 →</div>
-        <div class="page">${idx} / ${items.length} · 左右滑动</div>
-      </a>`;
-  }).join("");
-
-  return `<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{height:100%;overflow:hidden}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC",sans-serif;
-    background:#eef3ee;
-  }
-  @media (prefers-color-scheme:dark){
-    body{background:#111827}
-  }
-  .track{
-    display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;
-  }
-  .track::-webkit-scrollbar{display:none}
-  .card{
-    flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;
-    display:flex;flex-direction:column;
-    padding:calc(56px + env(safe-area-inset-top)) 36px calc(48px + env(safe-area-inset-bottom));
-    text-decoration:none;color:#1a2b22;
-  }
-  @media (prefers-color-scheme:dark){.card{color:#e5e7eb}}
-  .tag{
-    align-self:flex-start;font-size:13px;font-weight:700;
-    padding:6px 14px;border-radius:999px;margin-bottom:28px;
-  }
-  .title{font-size:28px;font-weight:800;line-height:1.4}
-  .meta{font-size:14px;color:#6b7a70;margin-top:20px;line-height:1.5}
-  @media (prefers-color-scheme:dark){.meta{color:#9ca3af}}
-  .score-wrap{margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:40px}
-  .score-label{font-size:13px;color:#6b7a70}
-  @media (prefers-color-scheme:dark){.score-label{color:#9ca3af}}
-  .score{font-size:30px;font-weight:800}
-  .open{
-    margin-top:14px;text-align:center;font-size:16px;font-weight:700;
-    padding:14px;border-radius:16px;color:#1f9d61;background:rgba(31,157,97,.10);
-  }
-  @media (prefers-color-scheme:dark){.open{color:#34d399}}
-  .page{text-align:center;font-size:12px;color:#a8bbad;margin-top:18px}
-</style>
-</head>
-<body>
-  <div class="track">${cards}</div>
-</body>
-</html>`;
-}
 
 async function presentSlides() {
-  const latest = await fetchLatest();
-  const items = latest.items || [];
-  if (!items.length) throw new Error("今日暂无数据");
-
+  // 直接加载线上滑动页面 (界面更新无需改脚本)
   const wv = new WebView();
-  // 点击卡片: 拦截请求, 用 Safari 打开原文 (避免 WebView 内导航)
+  // 允许本站资源 (页面本身+data.json), 外部链接交给 Safari
   wv.shouldAllowRequest = (req) => {
-    const u = req.url;
-    if (u && u.startsWith("http")) {
+    const u = req.url || "";
+    if (u.startsWith("https://goodbai37.github.io")) return true;
+    if (u.startsWith("http")) {
       Safari.open(u);
       return false;
     }
     return true;
   };
-  // 必须传有效 Size (不能 new Size() 无参, 否则报
-  // "expected value of type number but got undefined")
   const screen = Device.screenSize();
-  await wv.loadHTML(buildSlidesHTML(items), "", new Size(screen.width, screen.height), true);
+  await wv.loadURL(SLIDES_URL, new Size(screen.width, screen.height), true);
 }
 
 // ---------- 入口 ----------
