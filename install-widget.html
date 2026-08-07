@@ -52,7 +52,7 @@
   <div class="step">
     <div class="num">2</div>
     <div class="step-body">
-      <div class="step-title">一键导入脚本</div>
+      <div class="step-title">导入脚本</div>
       <div class="step-desc">点下面按钮，会自动打开 Scriptable 并导入「益生菌热点」脚本（导入后脚本名称为 <code>probiotic-widget</code>）</div>
     </div>
   </div>
@@ -62,10 +62,12 @@
   </a>
 
   <div class="tip">
-    <b>⚠️ 如果点了没反应：</b>说明未安装 Scriptable 或未允许跳转。<br>
-    ① 先去 App Store 装好 Scriptable；<br>
-    ② 再点上方按钮；<br>
-    ③ 仍不行就点下面的「复制代码」，打开 Scriptable → 右上角 <b>+</b> 新建脚本 → 粘贴 → 命名 <code>probiotic-widget</code> 保存。
+    <b>⚠️ 已经导入过旧版（显示空白）？</b><br>
+    ① 打开 Scriptable App → 找到 <code>probiotic-widget</code> 脚本；<br>
+    ② 点进去 → 右上角 ⋯ → <b>编辑</b>；<br>
+    ③ 全选（长按文本→全选）删除旧代码；<br>
+    ④ 点下方「📋 复制 v2 代码」→ 粘贴 → 返回保存。<br>
+    <b>v2 已修复空白问题</b>（旧版用了错误的 module.exports 写法，新版改用 Scriptable 标准入口）。
   </div>
 
   <div class="step">
@@ -98,7 +100,7 @@
     <div class="demo-meta">点击条目直达 PubMed / 食品伙伴网原文 · 每日自动刷新</div>
   </div>
 
-  <a class="btn secondary" href="javascript:void(0)" onclick="copyCode()">📋 复制脚本代码（备用方案）</a>
+  <a class="btn secondary" href="javascript:void(0)" onclick="copyCode()">📋 复制 v2 代码（已修复空白）</a>
 
   <p class="footer">数据来源：PubMed · 食品伙伴网 · 卫健委<br>每日 08:30 自动更新 · GitHub Pages 部署</p>
 </div>
