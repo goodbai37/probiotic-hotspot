@@ -96,13 +96,14 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
 
     const N = items.length;
     const app = document.getElementById("app");
+    const W = window.innerWidth; // 视口宽 (px) — 所有定位用同一基准
     app.innerHTML = `<div id="deck" class="no-anim">` + items.map((it, i) => {
       const isReg = it.tag === "法规动态";
       const tagText = isReg ? "⚖️ 法规动态" : "🔬 相关文献";
       const tagColor = isReg ? "#d97706" : "#2563eb";
       const tagBg = isReg ? "rgba(217,119,6,.12)" : "rgba(37,99,235,.10)";
       const scoreColor = isReg ? "#d97706" : "#1f9d61";
-      return `<a class="card" style="left:${i * 100}%" href="${esc(it.url || "#")}" data-idx="${i}">
+      return `<a class="card" style="left:${i * W}px" href="${esc(it.url || "#")}" data-idx="${i}">
         <div class="tag" style="color:${tagColor};background:${tagBg}">${tagText}</div>
         <div class="title">${esc(it.text || it.title || "")}</div>
         <div class="meta">${esc([it.journal, it.date].filter(Boolean).join("  ·  "))}</div>
@@ -141,7 +142,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
       cur = Math.max(0, Math.min(N - 1, idx));
       deck.classList.toggle("anim", !!anim);
       deck.classList.toggle("no-anim", !anim);
-      deck.style.transform = `translateX(${-cur * 100}%)`;
+      deck.style.transform = `translateX(${-cur * W}px)`;
       updateDots();
     }
 
@@ -162,7 +163,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
       e.preventDefault();
       moved = true;
       deck.classList.add("no-anim"); deck.classList.remove("anim");
-      deck.style.transform = `translateX(${(-cur * 100) + (dx / window.innerWidth) * 100}%)`;
+      deck.style.transform = `translateX(${(-cur * W) + dx}px)`;
     }, { passive: false });
 
     document.addEventListener("touchend", e => {
@@ -188,6 +189,19 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
     // 箭头按钮
     prev.addEventListener("click", () => go(cur - 1, true));
     next.addEventListener("click", () => go(cur + 1, true));
+
+    // 旋转/窗口变化: 重算卡片位置 (像素基准需刷新)
+    let rszTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(rszTimer);
+      rszTimer = setTimeout(() => {
+        const W2 = window.innerWidth;
+        document.querySelectorAll(".card").forEach((c, i) => {
+          c.style.left = (i * W2) + "px";
+        });
+        deck.style.transform = `translateX(${-cur * W2}px)`;
+      }, 200);
+    });
 
     go(0, false);
     updateDots();
