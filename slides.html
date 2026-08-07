@@ -13,18 +13,20 @@
     background:#eef3ee;
   }
   @media (prefers-color-scheme:dark){body{background:#111827}}
-  .track{
-    display:flex;height:100%;width:100%;overflow-x:auto;overflow-y:hidden;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  /* deck: 绝对定位容器, 用 transform 翻页, 不依赖原生滚动 */
+  #deck{
+    position:fixed;left:0;top:0;width:100%;height:100%;
+    will-change:transform;
   }
-  .track::-webkit-scrollbar{display:none}
+  #deck.no-anim{transition:none !important}
+  #deck.anim{transition:transform .32s cubic-bezier(.25,.8,.35,1)}
   .card{
-    flex:0 0 100%;min-width:0;width:100%;
+    position:absolute;left:0;top:0;width:100%;height:100%;
     display:flex;flex-direction:column;
-    padding:calc(64px + env(safe-area-inset-top)) 32px calc(56px + env(safe-area-inset-bottom));
-    text-decoration:none;color:#1a2b22;
+    padding:calc(64px + env(safe-area-inset-top)) 32px calc(64px + env(safe-area-inset-bottom));
+    text-decoration:none;color:#1a2b22;background:#eef3ee;
   }
-  @media (prefers-color-scheme:dark){.card{color:#e5e7eb}}
+  @media (prefers-color-scheme:dark){.card{background:#111827;color:#e5e7eb}}
   .tag{
     align-self:flex-start;font-size:13px;font-weight:700;
     padding:6px 14px;border-radius:999px;margin-bottom:28px;
@@ -55,12 +57,25 @@
   .error{color:#dc2626}
   .error small{color:#6b7a70;font-size:12px;margin-top:4px}
   .dots{
-    position:fixed;left:0;right:0;bottom:calc(18px + env(safe-area-inset-bottom));
+    position:fixed;left:0;right:0;bottom:calc(20px + env(safe-area-inset-bottom));
     display:flex;justify-content:center;gap:6px;z-index:10;pointer-events:none;
   }
   .dot{width:7px;height:7px;border-radius:50%;background:#c3d4c9;transition:all .25s}
   @media (prefers-color-scheme:dark){.dot{background:#374151}}
   .dot.on{width:18px;border-radius:4px;background:#1f9d61}
+  /* 左右箭头按钮 (边界也能翻) */
+  .nav-btn{
+    position:fixed;top:50%;transform:translateY(-50%);z-index:11;
+    width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.75);border:none;box-shadow:0 2px 10px rgba(0,0,0,.12);
+    font-size:20px;color:#1a2b22;display:flex;align-items:center;justify-content:center;
+    -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  }
+  @media (prefers-color-scheme:dark){.nav-btn{background:rgba(31,41,55,.75);color:#e5e7eb}}
+  .nav-btn:active{transform:translateY(-50%) scale(.92)}
+  #btnPrev{left:10px}
+  #btnNext{right:10px}
+  .nav-btn.hidden{display:none}
 </style>
 </head>
 <body>
@@ -78,8 +93,9 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
     const items = latest.items || [];
     if (!items.length) throw new Error("今日暂无数据");
 
+    const N = items.length;
     const app = document.getElementById("app");
-    app.innerHTML = `<div class="track">` + items.map((it, i) => {
+    app.innerHTML = `<div id="deck" class="no-anim">` + items.map((it, i) => {
       const isReg = it.tag === "法规动态";
       const tagText = isReg ? "⚖️ 法规动态" : "🔬 相关文献";
       const tagColor = isReg ? "#d97706" : "#2563eb";
@@ -94,74 +110,86 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
           <span class="score" style="color:${scoreColor}">${esc(String(it.score ?? "—"))}</span>
         </div>
         <div class="open">查看原文 →</div>
-        <div class="page">${i+1} / ${items.length} · 左右滑动</div>
+        <div class="page">${i+1} / ${N} · 左右滑动</div>
       </a>`;
     }).join("") + `</div>`;
 
-    // 底部圆点指示器
+    // 圆点
     const dots = document.createElement("div");
     dots.className = "dots";
     dots.innerHTML = items.map((_, i) => `<span class="dot${i===0?" on":""}"></span>`).join("");
     document.body.appendChild(dots);
-
-    const track = app.querySelector(".track");
     const dotEls = [...dots.children];
-    const N = items.length;
 
-    function go(idx) {
-      idx = Math.max(0, Math.min(N - 1, idx));
-      track.scrollTo({ left: idx * track.clientWidth, behavior: "smooth" });
-      dotEls.forEach((d, i) => d.classList.toggle("on", i === idx));
+    // 左右箭头
+    const prev = document.createElement("button");
+    prev.id = "btnPrev"; prev.className = "nav-btn"; prev.innerHTML = "‹";
+    const next = document.createElement("button");
+    next.id = "btnNext"; next.className = "nav-btn"; next.innerHTML = "›";
+    document.body.appendChild(prev); document.body.appendChild(next);
+
+    const deck = document.getElementById("deck");
+    let cur = 0, startX = 0, startY = 0, dragging = false, moved = false;
+
+    function updateDots() {
+      dotEls.forEach((d, i) => d.classList.toggle("on", i === cur));
+      prev.classList.toggle("hidden", cur === 0);
+      next.classList.toggle("hidden", cur === N - 1);
+    }
+    function go(idx, anim) {
+      cur = Math.max(0, Math.min(N - 1, idx));
+      deck.classList.toggle("anim", !!anim);
+      deck.classList.toggle("no-anim", !anim);
+      deck.style.transform = `translateX(${-cur * 100}%)`;
+      updateDots();
     }
 
-    // 触摸翻页: 横向滑动 > 阈值 => 翻页
-    let startX = 0, startY = 0, startLeft = 0, swiping = false, moved = false;
-    track.addEventListener("touchstart", e => {
+    // 触摸翻页
+    document.addEventListener("touchstart", e => {
       if (e.touches.length !== 1) return;
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
-      startLeft = track.scrollLeft;
-      swiping = true; moved = false;
+      dragging = true; moved = false;
     }, { passive: true });
 
-    track.addEventListener("touchmove", e => {
-      if (!swiping || e.touches.length !== 1) return;
+    document.addEventListener("touchmove", e => {
+      if (!dragging || e.touches.length !== 1) return;
       const dx = e.touches[0].clientX - startX;
       const dy = e.touches[0].clientY - startY;
-      // 纵向滑动(上下)不拦截; 横向滑动(左右)才翻页
-      if (Math.abs(dx) < 8) return;
-      if (Math.abs(dy) > Math.abs(dx)) { swiping = false; return; }
+      if (Math.abs(dx) < 6) return;                       // 未确定方向
+      if (Math.abs(dy) > Math.abs(dx)) { dragging = false; return; } // 纵向不拦截
       e.preventDefault();
-      if (Math.abs(dx) > 10) moved = true;
-      track.scrollLeft = startLeft - dx; // 手指跟手
+      moved = true;
+      deck.classList.add("no-anim"); deck.classList.remove("anim");
+      deck.style.transform = `translateX(${(-cur * 100) + (dx / window.innerWidth) * 100}%)`;
     }, { passive: false });
 
-    track.addEventListener("touchend", e => {
-      if (!swiping) return;
-      swiping = false;
-      const w = track.clientWidth || 1;
-      const dx = track.scrollLeft - startLeft;
-      const cur = Math.round(startLeft / w);
+    document.addEventListener("touchend", e => {
+      if (!dragging) return;
+      dragging = false;
+      const dx = e.changedTouches[0].clientX - startX;
+      const w = window.innerWidth;
       let target = cur;
-      if (dx < -w * 0.22) target = cur + 1;      // 左滑 -> 下一页
-      else if (dx > w * 0.22) target = cur - 1;  // 右滑 -> 上一页
-      go(target);
-      // 滑动后短暂屏蔽点击(防止误触卡片链接)
       if (moved) {
-        setTimeout(() => { moved = false; }, 350);
+        if (dx < -w * 0.15) target = cur + 1;      // 左滑 -> 下一页
+        else if (dx > w * 0.15) target = cur - 1;  // 右滑 -> 上一页
+        // 位移不足阈值: 回弹当前页
       }
+      go(target, true);
+      if (moved) setTimeout(() => { moved = false; }, 380); // 屏蔽滑动后的误触
     }, { passive: true });
 
-    // 滑动后屏蔽卡片点击
-    track.addEventListener("click", e => {
+    // 点击屏蔽 (滑动后短暂生效)
+    document.addEventListener("click", e => {
       if (moved) { e.preventDefault(); e.stopPropagation(); }
     }, true);
 
-    // 滚动时同步圆点 (兼容桌面滚轮/拖拽)
-    track.addEventListener("scroll", () => {
-      const idx = Math.round(track.scrollLeft / (track.clientWidth || 1));
-      dotEls.forEach((d, i) => d.classList.toggle("on", i === idx));
-    }, { passive: true });
+    // 箭头按钮
+    prev.addEventListener("click", () => go(cur - 1, true));
+    next.addEventListener("click", () => go(cur + 1, true));
+
+    go(0, false);
+    updateDots();
   } catch (e) {
     document.getElementById("app").innerHTML =
       `<div class="error">⚠️ 加载失败<br><small>${esc(e.message || e)}<br>请检查网络后重试</small></div>`;
