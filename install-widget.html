@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f9d61">
+<title>安装「益生菌热点」桌面小组件</title>
+<style>
+  :root{--green:#1f9d61;--bg:#f0f7f2;--card:#fff;--ink:#1a2b22;--ink-2:#6b7a70}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","MiSans","Microsoft YaHei",sans-serif;background:var(--bg);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px calc(40px + env(safe-area-inset-bottom))}
+  .card{background:var(--card);border-radius:24px;box-shadow:0 12px 40px rgba(20,60,40,.12);padding:28px 20px;max-width:400px;width:100%}
+  h1{font-size:20px;font-weight:800;color:var(--ink);text-align:center;margin-bottom:6px}
+  .sub{font-size:13px;color:var(--ink-2);text-align:center;line-height:1.6;margin-bottom:20px}
+  .step{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0f5f0;align-items:flex-start}
+  .step:last-of-type{border-bottom:none}
+  .num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#e8f5ee;color:var(--green);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step-body{flex:1;min-width:0}
+  .step-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .step-desc{font-size:13px;color:var(--ink-2);line-height:1.55}
+  .step-desc code{background:#f0f7f2;color:var(--green);padding:1px 6px;border-radius:6px;font-size:12px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;padding:16px;background:linear-gradient(135deg,#1f9d61,#0d9488);color:#fff;font-size:16px;font-weight:700;border-radius:16px;text-decoration:none;box-shadow:0 6px 20px rgba(15,120,80,.25);transition:transform .12s ease,opacity .2s}
+  .btn:active{transform:scale(.97);opacity:.9}
+  .btn.secondary{background:#eef6f0;color:var(--green);box-shadow:none;font-size:14px;font-weight:600;border:1.5px solid #cde8d8}
+  .tip{margin-top:16px;background:#fff8ec;border-radius:12px;padding:12px 14px;font-size:12.5px;color:#8a6d2f;line-height:1.6}
+  .tip b{color:#b45309}
+  .footer{margin-top:20px;font-size:11px;color:#a8bbad;text-align:center;line-height:1.6}
+  .sizes{display:flex;gap:8px;margin-top:6px}
+  .size{flex:1;background:#f7faf7;border-radius:10px;padding:8px 4px;text-align:center;font-size:11px;color:var(--ink-2)}
+  .size b{display:block;font-size:16px;margin-bottom:2px}
+  .demo{background:#f7faf7;border-radius:14px;padding:12px;margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .demo-row{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink)}
+  .demo-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .demo-dot.b{background:#2563eb}.demo-dot.a{background:#d97706}
+  .demo-score{margin-left:auto;font-weight:700;color:var(--green);font-size:12px}
+  .demo-meta{font-size:10.5px;color:#a8bbad;margin-top:2px}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🦠 益生菌热点 · 桌面小组件</h1>
+  <p class="sub">像相册一样的小块，显示最新菌株研究 + 法规动态<br>可拖动、叠放、加入智能叠放</p>
+
+  <div class="step">
+    <div class="num">1</div>
+    <div class="step-body">
+      <div class="step-title">安装 Scriptable App</div>
+      <div class="step-desc">App Store 搜索 <b>Scriptable</b>（免费）并安装。也可以点这里：<br><a href="https://apps.apple.com/app/scriptable/id1405459188" style="color:var(--green);font-weight:600">前往 App Store ›</a></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <div class="step-body">
+      <div class="step-title">一键导入脚本</div>
+      <div class="step-desc">点下面按钮，会自动打开 Scriptable 并导入「益生菌热点」脚本（导入后脚本名称为 <code>probiotic-widget</code>）</div>
+    </div>
+  </div>
+
+  <a class="btn" href="scriptable:///open?url=https%3A%2F%2Fgoodbai37.github.io%2Fprobiotic-hotspot%2Fprobiotic-widget.js">
+    📲 导入脚本到 Scriptable
+  </a>
+
+  <div class="tip">
+    <b>⚠️ 如果点了没反应：</b>说明未安装 Scriptable 或未允许跳转。<br>
+    ① 先去 App Store 装好 Scriptable；<br>
+    ② 再点上方按钮；<br>
+    ③ 仍不行就点下面的「复制代码」，打开 Scriptable → 右上角 <b>+</b> 新建脚本 → 粘贴 → 命名 <code>probiotic-widget</code> 保存。
+  </div>
+
+  <div class="step">
+    <div class="num">3</div>
+    <div class="step-body">
+      <div class="step-title">添加到主屏幕</div>
+      <div class="step-desc">长按主屏幕空白处 → 左上角 <b>+</b> → 搜索 <b>Scriptable</b> → 选尺寸添加</div>
+    </div>
+  </div>
+
+  <div class="sizes">
+    <div class="size"><b>小</b>3 条</div>
+    <div class="size"><b>中</b>5 条</div>
+    <div class="size"><b>大</b>8 条</div>
+  </div>
+
+  <div class="step">
+    <div class="num">4</div>
+    <div class="step-body">
+      <div class="step-title">绑定脚本</div>
+      <div class="step-desc">长按小组件 → <b>编辑小组件</b> → Script 选 <code>probiotic-widget</code> → 完成</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div style="font-size:11px;color:#a8bbad">效果预览</div>
+    <div class="demo-row"><span class="demo-dot b"></span>婴儿双歧杆菌CCFM1445促进骨生长<span class="demo-score">73</span></div>
+    <div class="demo-row"><span class="demo-dot b"></span>植物乳杆菌Probio87改善便秘症状<span class="demo-score">70</span></div>
+    <div class="demo-row"><span class="demo-dot a"></span>新规迭代赋能产业升级 益生菌保健食品监管变革<span class="demo-score">88</span></div>
+    <div class="demo-meta">点击条目直达 PubMed / 食品伙伴网原文 · 每日自动刷新</div>
+  </div>
+
+  <a class="btn secondary" href="javascript:void(0)" onclick="copyCode()">📋 复制脚本代码（备用方案）</a>
+
+  <p class="footer">数据来源：PubMed · 食品伙伴网 · 卫健委<br>每日 08:30 自动更新 · GitHub Pages 部署</p>
+</div>
+
+<script>
+function copyCode(){
+  fetch('https://goodbai37.github.io/probiotic-hotspot/probiotic-widget.js')
+    .then(r=>r.text()).then(t=>navigator.clipboard.writeText(t))
+    .then(()=>{alert('✅ 代码已复制，去 Scriptable 新建脚本粘贴即可')})
+    .catch(()=>alert('❌ 复制失败，请直接访问脚本页手动复制：\nhttps://goodbai37.github.io/probiotic-hotspot/probiotic-widget.js'));
+}
+</script>
+</body>
+</html>
