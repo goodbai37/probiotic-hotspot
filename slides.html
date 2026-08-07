@@ -103,7 +103,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
       const tagColor = isReg ? "#d97706" : "#2563eb";
       const tagBg = isReg ? "rgba(217,119,6,.12)" : "rgba(37,99,235,.10)";
       const scoreColor = isReg ? "#d97706" : "#1f9d61";
-      return `<a class="card" style="left:${i * W}px" href="${esc(it.url || "#")}" data-idx="${i}">
+      return `<a class="card" style="left:${i * W}px;width:${W}px" href="${esc(it.url || "#")}" data-idx="${i}">
         <div class="tag" style="color:${tagColor};background:${tagBg}">${tagText}</div>
         <div class="title">${esc(it.text || it.title || "")}</div>
         <div class="meta">${esc([it.journal, it.date].filter(Boolean).join("  ·  "))}</div>
@@ -202,6 +202,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
         deck.style.width = (N * W2) + "px";
         document.querySelectorAll(".card").forEach((c, i) => {
           c.style.left = (i * W2) + "px";
+          c.style.width = W2 + "px";
         });
         deck.style.transform = `translateX(${-cur * W2}px)`;
       }, 200);
