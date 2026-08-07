@@ -2,14 +2,14 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: blue; icon-glyph: pills;
 // ============================================================
-// 益生菌热点速览 · 主屏幕小组件 + 滑动浏览 (Scriptable) v3
+// 益生菌热点速览 · 主屏幕小组件 + 滑动浏览 (Scriptable) v4
 // 数据源: https://goodbai37.github.io/probiotic-hotspot/data.json
 //
 // 两种模式:
-//   1) 主屏幕小组件: 简洁显示前 2-4 条, 点击标题/底部按钮
-//      进入全屏滑动浏览 (scriptable:///run 打开 App 运行本脚本)
+//   1) 主屏幕小组件: 简洁显示前 2-4 条, 点击标题/底部进入全屏浏览
 //   2) 运行模式 (Scriptable 里点 ▶ 或点小组件):
-//      全屏左右滑动, 每页一张词条卡片, 不拥挤
+//      全屏左右滑动卡片, 每页一张词条 (WebView + scroll-snap,
+//      兼容所有 Scriptable 版本, 不依赖新版 Page API)
 //
 // 更新: 每日 00:30 自动刷新
 // ============================================================
@@ -26,8 +26,6 @@ const INK = Color.dynamic(new Color("#1a2b22"), new Color("#e5e7eb"));
 const MUTED = Color.dynamic(new Color("#6b7a70"), new Color("#9ca3af"));
 const CARD = Color.dynamic(new Color("#ffffff"), new Color("#1f2937"));
 const BG = Color.dynamic(new Color("#eef3ee"), new Color("#111827"));
-const TAG_BG_BLUE = Color.dynamic(new Color("#eaf4ef"), new Color("#123524"));
-const TAG_BG_AMBER = Color.dynamic(new Color("#fdf3e3"), new Color("#3a2a0a"));
 
 async function fetchLatest() {
   const req = new Request(DATA_URL);
@@ -35,6 +33,13 @@ async function fetchLatest() {
   const records = await req.loadJSON();
   if (!records || records.length === 0) throw new Error("data.json 为空");
   return records[records.length - 1]; // 最后一条 = 最新一天
+}
+
+// HTML 转义 (防止词条内容破坏页面结构)
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
 // ---------- 小组件单行条目 ----------
@@ -146,84 +151,101 @@ async function createWidget() {
   return widget;
 }
 
-// ---------- 模式2: 全屏左右滑动, 每页一个词条 ----------
-async function createSlides() {
+// ---------- 模式2: 全屏左右滑动卡片 (WebView + scroll-snap) ----------
+function buildSlidesHTML(items) {
+  const cards = items.map((it, i) => {
+    const isReg = it.tag === "法规动态";
+    const tagText = isReg ? "⚖️ 法规动态" : "🔬 相关文献";
+    const tagColor = isReg ? "#d97706" : "#2563eb";
+    const tagBg = isReg ? "rgba(217,119,6,.12)" : "rgba(37,99,235,.10)";
+    const title = esc(it.text || it.title || "");
+    const meta = esc([it.journal, it.date].filter(Boolean).join("  ·  "));
+    const score = esc(String(it.score ?? "—"));
+    const url = esc(it.url || "#");
+    const idx = i + 1;
+    return `
+      <a class="card" href="${url}">
+        <div class="tag" style="color:${tagColor};background:${tagBg}">${tagText}</div>
+        <div class="title">${title}</div>
+        <div class="meta">${meta}</div>
+        <div class="score-wrap">
+          <span class="score-label">热度</span>
+          <span class="score" style="color:${tagColor}">${score}</span>
+        </div>
+        <div class="open">查看原文 →</div>
+        <div class="page">${idx} / ${items.length} · 左右滑动</div>
+      </a>`;
+  }).join("");
+
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;overflow:hidden}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC",sans-serif;
+    background:#eef3ee;
+  }
+  @media (prefers-color-scheme:dark){
+    body{background:#111827}
+  }
+  .track{
+    display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .track::-webkit-scrollbar{display:none}
+  .card{
+    flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;
+    display:flex;flex-direction:column;
+    padding:calc(56px + env(safe-area-inset-top)) 36px calc(48px + env(safe-area-inset-bottom));
+    text-decoration:none;color:#1a2b22;
+  }
+  @media (prefers-color-scheme:dark){.card{color:#e5e7eb}}
+  .tag{
+    align-self:flex-start;font-size:13px;font-weight:700;
+    padding:6px 14px;border-radius:999px;margin-bottom:28px;
+  }
+  .title{font-size:28px;font-weight:800;line-height:1.4}
+  .meta{font-size:14px;color:#6b7a70;margin-top:20px;line-height:1.5}
+  @media (prefers-color-scheme:dark){.meta{color:#9ca3af}}
+  .score-wrap{margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:40px}
+  .score-label{font-size:13px;color:#6b7a70}
+  @media (prefers-color-scheme:dark){.score-label{color:#9ca3af}}
+  .score{font-size:30px;font-weight:800}
+  .open{
+    margin-top:14px;text-align:center;font-size:16px;font-weight:700;
+    padding:14px;border-radius:16px;color:#1f9d61;background:rgba(31,157,97,.10);
+  }
+  @media (prefers-color-scheme:dark){.open{color:#34d399}}
+  .page{text-align:center;font-size:12px;color:#a8bbad;margin-top:18px}
+</style>
+</head>
+<body>
+  <div class="track">${cards}</div>
+</body>
+</html>`;
+}
+
+async function presentSlides() {
   const latest = await fetchLatest();
   const items = latest.items || [];
-  const screen = Device.screenSize();
-  // 卡片高度 = 屏幕高度 - 上下留白, 保证每页只放一张卡片
-  const cardW = Math.min(screen.width - 48, 560);
-  const cardH = screen.height - 180;
+  if (!items.length) throw new Error("今日暂无数据");
 
-  const page = new Page();
-  page.setBackgroundColor(BG);
-
-  if (!items.length) {
-    const s = page.addStack();
-    const t = s.addText("今日暂无数据");
-    t.font = Font.mediumSystemFont(16);
-    t.textColor = MUTED;
-  }
-
-  for (const it of items) {
-    const isReg = it.tag === "法规动态";
-
-    const card = page.addStack();
-    card.layoutVertically();
-    card.size = new Size(cardW, cardH);
-    card.backgroundColor = CARD;
-    card.cornerRadius = 28;
-    card.setPadding(28, 24, 24, 24);
-
-    // 分类标签
-    const tag = card.addText(isReg ? "⚖️ 法规动态" : "🔬 相关文献");
-    tag.font = Font.boldSystemFont(13);
-    tag.textColor = isReg ? AMBER : BLUE;
-    card.addSpacer(14);
-
-    // 大标题
-    const t = card.addText(it.text || it.title || "");
-    t.font = Font.boldSystemFont(26);
-    t.textColor = INK;
-    t.lineLimit = 6;
-    card.addSpacer(16);
-
-    // 期刊 · 日期
-    const meta = card.addText([it.journal, it.date].filter(Boolean).join("  ·  "));
-    meta.font = Font.mediumSystemFont(13);
-    meta.textColor = MUTED;
-    meta.lineLimit = 2;
-    card.addSpacer(24);
-
-    // 热度分数
-    const scoreRow = card.addStack();
-    scoreRow.layoutHorizontally();
-    scoreRow.centerAlignContent();
-    scoreRow.spacing = 8;
-    const sl = scoreRow.addText("热度");
-    sl.font = Font.mediumSystemFont(12);
-    sl.textColor = MUTED;
-    const sv = scoreRow.addText(String(it.score ?? "—"));
-    sv.font = Font.boldSystemFont(20);
-    sv.textColor = GREEN;
-    card.addSpacer();
-
-    // 查看原文按钮
-    const btn = card.addButton("查看原文 →");
-    btn.url = it.url;
-    btn.backgroundColor = isReg ? TAG_BG_AMBER : TAG_BG_BLUE;
-    btn.cornerRadius = 14;
-    btn.font = Font.boldSystemFont(15);
-    btn.textColor = isReg ? AMBER : GREEN;
-
-    // 页码提示
-    const idx = items.indexOf(it) + 1;
-    const p = card.addText(`${idx} / ${items.length}  ·  左右滑动`);
-    p.font = Font.systemFont(10);
-    p.textColor = MUTED;
-  }
-
-  page.present(true); // 全屏
+  const wv = new WebView();
+  // 点击卡片: 拦截请求, 用 Safari 打开原文 (避免 WebView 内导航)
+  wv.shouldAllowRequest = (req) => {
+    const u = req.url;
+    if (u && u.startsWith("http")) {
+      Safari.open(u);
+      return false;
+    }
+    return true;
+  };
+  await wv.loadHTML(buildSlidesHTML(items), null, new Size(), true);
+  await wv.present();
 }
 
 // ---------- 入口 ----------
@@ -232,18 +254,14 @@ if (config.runsInWidget) {
   Script.setWidget(widget);
   Script.complete();
 } else {
-  // App 里运行 (点 ▶ 或点小组件进入): 展示全屏滑动
+  // App 里运行 (点 ▶ 或点小组件进入): 全屏滑动浏览
   try {
-    await createSlides();
+    await presentSlides();
   } catch (e) {
-    const p = new Page();
-    p.setBackgroundColor(BG);
-    const s = p.addStack();
-    s.layoutVertically();
-    s.centerAlignContent();
-    const t = s.addText("⚠️ " + (e.message || "加载失败"));
-    t.font = Font.boldSystemFont(16);
-    t.textColor = new Color("#dc2626");
-    p.present(true);
+    const p = new Alert();
+    p.title = "⚠️ 加载失败";
+    p.message = String(e.message || e);
+    p.addAction("好");
+    await p.presentAlert();
   }
 }
