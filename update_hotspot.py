@@ -641,6 +641,14 @@ def render_html(items: list[dict], updated: str) -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f9d61">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="益生菌热点">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <title>益生菌研发热点速览</title>
 <style>{WIDGET_CSS}</style>
 </head>
@@ -665,6 +673,11 @@ def render_html(items: list[dict], updated: str) -> str:
   document.getElementById('expandBtn').addEventListener('click', function () {{
     document.getElementById('widget').classList.add('expanded');
   }});
+</script>
+<script>
+  if ('serviceWorker' in navigator) {{
+    navigator.serviceWorker.register('/sw.js').catch(() => {{}});
+  }}
 </script>
 </body>
 </html>
@@ -793,13 +806,35 @@ def _mobile_item_html(it: dict, extra: bool = False) -> str:
 
 
 def render_mobile(items: list[dict], updated: str) -> str:
-    """渲染移动端嵌入组件（body+style+script 片段，可直接嵌入宿主页面）。
+    """渲染移动端独立页面（完整 HTML + PWA，可直接添加到手机桌面）。
 
     结构与 widget.html 一致：相关文献/法规动态两类分组，组内按分数降序；
     每组默认显示前 MOBILE_FOLD 条，点击组头/展开按钮显示全部。
     """
     groups = _group_items(items)
     parts = [
+        '<!DOCTYPE html>',
+        '<html lang="zh-CN">',
+        '<head>',
+        '<meta charset="UTF-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+        '<meta name="theme-color" content="#1f9d61">',
+        '<meta name="apple-mobile-web-app-capable" content="yes">',
+        '<meta name="mobile-web-app-capable" content="yes">',
+        '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">',
+        '<meta name="apple-mobile-web-app-title" content="益生菌热点">',
+        '<link rel="manifest" href="/manifest.json">',
+        '<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">',
+        '<link rel="apple-touch-icon" href="/icon-192.png">',
+        '<title>益生菌研发热点速览</title>',
+        '<style>',
+        '  html,body{margin:0;padding:0;background:#eef3ee}',
+        '  body{display:flex;justify-content:center;padding:calc(12px + env(safe-area-inset-top)) 0 env(safe-area-inset-bottom);min-height:100vh}',
+        '  .probiotic-hotspot-mobile{width:100%;max-width:560px}',
+        MOBILE_CSS,
+        '</style>',
+        '</head>',
+        '<body>',
         '<!-- Mobile component for probiotic hotspot - 自动生成 -->',
         '<div class="probiotic-hotspot-mobile">',
         '  <div class="hs-header">',
@@ -828,12 +863,12 @@ def render_mobile(items: list[dict], updated: str) -> str:
     parts.append('    <a href="archive.html" class="hs-more-link">查看历史存档 ›</a>')
     parts.append('  </div>')
     parts.append('</div>')
-    parts.append('')
-    parts.append('<style>')
-    parts.append(MOBILE_CSS)
-    parts.append('</style>')
-    parts.append('')
     parts.append(MOBILE_JS)
+    parts.append('<script>')
+    parts.append("  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(() => {}); }")
+    parts.append('</script>')
+    parts.append('</body>')
+    parts.append('</html>')
     return '\n'.join(parts) + '\n'
 
 

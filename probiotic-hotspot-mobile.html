@@ -1,3 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f9d61">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="益生菌热点">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<title>益生菌研发热点速览</title>
+<style>
+  html,body{margin:0;padding:0;background:#eef3ee}
+  body{display:flex;justify-content:center;padding:calc(12px + env(safe-area-inset-top)) 0 env(safe-area-inset-bottom);min-height:100vh}
+  .probiotic-hotspot-mobile{width:100%;max-width:560px}
+
+.probiotic-hotspot-mobile {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'HarmonyOS Sans SC', 'MiSans', 'Microsoft YaHei', sans-serif;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(20, 60, 40, 0.08);
+  overflow: hidden;
+  margin: 12px;
+}
+.hs-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 16px 12px; border-bottom: 1px solid #f0f5f0; }
+.hs-title { font-size: 18px; font-weight: 700; color: #1a2b22; margin: 0; }
+.hs-update { font-size: 12px; color: #6b7a70; background: #f0f7f2; padding: 4px 8px; border-radius: 12px; }
+.hs-group { border-bottom: 1px solid #f5f8f5; }
+.hs-group-header { display: flex; align-items: center; padding: 12px 16px; cursor: pointer; }
+.hs-group-dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+.hs-clinical .hs-group-dot { background: #2563eb; }
+.hs-regulatory .hs-group-dot { background: #d97706; }
+.hs-group-title { font-size: 14px; font-weight: 600; color: #1a2b22; flex: 1; }
+.hs-group-count { font-size: 12px; color: #a8bbad; margin-right: 8px; }
+.hs-group-content { display: flex; flex-direction: column; }
+.hs-item { display: flex; align-items: flex-start; padding: 12px 16px; text-decoration: none; border-bottom: 1px solid #f8faf8; transition: background 0.1s ease; }
+.hs-item:active { background: #f7faf7; }
+.hs-item-extra { display: none; }
+.hs-group.expanded .hs-item-extra { display: flex; }
+.hs-item-tag { flex-shrink: 0; font-size: 10px; font-weight: 600; padding: 4px 6px; border-radius: 999px; margin-right: 8px; margin-top: 2px; }
+.hs-tag-clinical { color: #2563eb; background: rgba(37, 99, 235, 0.1); }
+.hs-tag-regulatory { color: #d97706; background: rgba(217, 119, 6, 0.1); }
+.hs-item-content { flex: 1; min-width: 0; }
+.hs-item-text { font-size: 14px; line-height: 1.4; color: #1a2b22; font-weight: 500; margin: 0 0 4px 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.hs-item-meta { font-size: 11px; color: #a3b5a8; margin: 0; }
+.hs-expand-btn { font-size: 12px; color: #6b7a70; text-align: center; padding: 8px 0; cursor: pointer; display: none; }
+.hs-group.expanded .hs-expand-btn { display: block; }
+.hs-footer { padding: 16px; text-align: center; border-top: 1px solid #f0f5f0; }
+.hs-more-link { font-size: 14px; font-weight: 600; color: #1f9d61; text-decoration: none; }
+
+</style>
+</head>
+<body>
 <!-- Mobile component for probiotic hotspot - 自动生成 -->
 <div class="probiotic-hotspot-mobile">
   <div class="hs-header">
@@ -103,45 +159,6 @@
   </div>
 </div>
 
-<style>
-
-.probiotic-hotspot-mobile {
-  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'HarmonyOS Sans SC', 'MiSans', 'Microsoft YaHei', sans-serif;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(20, 60, 40, 0.08);
-  overflow: hidden;
-  margin: 12px;
-}
-.hs-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 16px 12px; border-bottom: 1px solid #f0f5f0; }
-.hs-title { font-size: 18px; font-weight: 700; color: #1a2b22; margin: 0; }
-.hs-update { font-size: 12px; color: #6b7a70; background: #f0f7f2; padding: 4px 8px; border-radius: 12px; }
-.hs-group { border-bottom: 1px solid #f5f8f5; }
-.hs-group-header { display: flex; align-items: center; padding: 12px 16px; cursor: pointer; }
-.hs-group-dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
-.hs-clinical .hs-group-dot { background: #2563eb; }
-.hs-regulatory .hs-group-dot { background: #d97706; }
-.hs-group-title { font-size: 14px; font-weight: 600; color: #1a2b22; flex: 1; }
-.hs-group-count { font-size: 12px; color: #a8bbad; margin-right: 8px; }
-.hs-group-content { display: flex; flex-direction: column; }
-.hs-item { display: flex; align-items: flex-start; padding: 12px 16px; text-decoration: none; border-bottom: 1px solid #f8faf8; transition: background 0.1s ease; }
-.hs-item:active { background: #f7faf7; }
-.hs-item-extra { display: none; }
-.hs-group.expanded .hs-item-extra { display: flex; }
-.hs-item-tag { flex-shrink: 0; font-size: 10px; font-weight: 600; padding: 4px 6px; border-radius: 999px; margin-right: 8px; margin-top: 2px; }
-.hs-tag-clinical { color: #2563eb; background: rgba(37, 99, 235, 0.1); }
-.hs-tag-regulatory { color: #d97706; background: rgba(217, 119, 6, 0.1); }
-.hs-item-content { flex: 1; min-width: 0; }
-.hs-item-text { font-size: 14px; line-height: 1.4; color: #1a2b22; font-weight: 500; margin: 0 0 4px 0; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-.hs-item-meta { font-size: 11px; color: #a3b5a8; margin: 0; }
-.hs-expand-btn { font-size: 12px; color: #6b7a70; text-align: center; padding: 8px 0; cursor: pointer; display: none; }
-.hs-group.expanded .hs-expand-btn { display: block; }
-.hs-footer { padding: 16px; text-align: center; border-top: 1px solid #f0f5f0; }
-.hs-more-link { font-size: 14px; font-weight: 600; color: #1f9d61; text-decoration: none; }
-
-</style>
-
-
 <script>
 // 点击组头展开/收起
 var groups = document.querySelectorAll('.hs-group-header');
@@ -153,3 +170,8 @@ for (var i = 0; i < groups.length; i++) {
 }
 </script>
 
+<script>
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(() => {}); }
+</script>
+</body>
+</html>
