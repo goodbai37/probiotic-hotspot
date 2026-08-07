@@ -1,0 +1,4 @@
+.cf_credentials.json
+__pycache__/
+*.pyc
+scoring_cache.json

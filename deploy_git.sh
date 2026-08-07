@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 部署到 GitHub Pages: 推送 widget.html + archive.html + index.html + 移动组件 + data.json
+# 部署到 GitHub Pages: 推送核心页面 + 数据 + 脚本
 set -euo pipefail
 cd "$(dirname "$0")"
 export PATH="$HOME/.local/bin:$PATH"
@@ -8,9 +8,12 @@ export PATH="$HOME/.local/bin:$PATH"
 git config --global http.lowSpeedLimit 1
 git config --global http.lowSpeedTime 300
 
+# 部署清单: 页面 + 数据 + 脚本 (slides.html 是滑动浏览主页面)
+FILES="widget.html slides.html archive.html index.html probiotic-hotspot-mobile.html data.json probiotic-widget.js"
+
 # 有变化才推送（避免每天产生空 commit）
-if ! git diff --quiet -- widget.html archive.html index.html probiotic-hotspot-mobile.html data.json probiotic-widget.js; then
-    git add widget.html archive.html index.html probiotic-hotspot-mobile.html data.json probiotic-widget.js
+if ! git diff --quiet -- $FILES; then
+    git add $FILES
     git commit -m "每日更新 $(date +%F) $(date +%H:%M)" || true
     # push 重试最多 3 次（网络不稳）
     for i in 1 2 3; do
