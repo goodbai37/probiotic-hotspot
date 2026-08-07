@@ -131,6 +131,9 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
     document.body.appendChild(prev); document.body.appendChild(next);
 
     const deck = document.getElementById("deck");
+    // 关键: deck 宽度必须容纳所有卡片 (N 张 × 屏幕宽),
+    // 否则 overflow:hidden 会把第 2 张以后的卡片全部裁掉 -> 翻页空白
+    deck.style.width = (N * W) + "px";
     let cur = 0, startX = 0, startY = 0, dragging = false, moved = false;
 
     function updateDots() {
@@ -196,6 +199,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
       clearTimeout(rszTimer);
       rszTimer = setTimeout(() => {
         const W2 = window.innerWidth;
+        deck.style.width = (N * W2) + "px";
         document.querySelectorAll(".card").forEach((c, i) => {
           c.style.left = (i * W2) + "px";
         });
