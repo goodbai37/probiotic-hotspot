@@ -251,6 +251,39 @@ def _foodmate_pub_date(url: str) -> str:
     return str(date.today())
 
 
+def _foodmate_content(url: str, limit: int = 1200) -> str:
+    """抓食品伙伴网详情页正文前 limit 字符，供 LLM 生成内容概括。
+
+    foodmate 正文在 <div class="content" id="article"> 容器内(嵌套 div,
+    不能用非贪婪 </div> 截断)，以『下一篇』为正文结束标志。
+    失败返回空串（调用方降级用标题）。
+    """
+    try:
+        html = fetch_url_safe(url, timeout=12)
+        if not html:
+            return ""
+        # 定位正文容器
+        i = html.find('id="article"')
+        if i == -1:
+            return ""
+        # 容器标签结束处往后才是正文
+        gt = html.find(">", i)
+        if gt != -1:
+            i = gt + 1
+        # 正文到『下一篇』为止（foodmate 固定结构）
+        j = html.find("下一篇", i)
+        body = html[i:j if j != -1 else i + 6000]
+        body = re.sub(r"<script.*?</script>", "", body, flags=re.S)
+        body = re.sub(r"<style.*?</style>", "", body, flags=re.S)
+        body = re.sub(r"<[^>]+>", " ", body)
+        body = re.sub(r"&nbsp;|&ldquo;|&rdquo;|&quot;", " ", body)
+        body = re.sub(r"\s+", " ", body).strip()
+        return body[:limit]
+    except Exception as e:
+        log.debug("正文抓取失败 %s -> %s", url, e)
+        return ""
+
+
 def fetch_foodmate() -> list[dict]:
     """首页资讯列表 -> 过滤益生菌/法规/专利相关条目（按 URL 去重）。
 
@@ -273,6 +306,7 @@ def fetch_foodmate() -> list[dict]:
                 "title": title,
                 "url": url,
                 "date": _foodmate_pub_date(url),  # 真实发布日期
+                "content": _foodmate_content(url),  # 正文前 1200 字, 供概括
                 "source": "foodmate",
                 "journal": "食品伙伴网",
                 "doi": "",
@@ -479,6 +513,88 @@ def llm_refine(items: list[dict]) -> list[dict]:
     log.info("法规保底+去重后 %d 条", len(uniq))
     # 不做类别保底: 某类当天没有合格内容就不展示（用户要求）
     return uniq
+
+
+def llm_brief(items: list[dict]) -> list[dict]:
+    """为入选条目生成中文内容概括 (brief 字段)。
+
+    覆盖所有条目（文献 + 法规动态）:
+      - 文献: 基于 PubMed 英文摘要概括（≤60 字中文）
+      - 法规: 基于报道正文/content 概括（≤60 字中文）
+    LLM 失败时降级为标题/摘要截断，保证每条约有概括。
+    """
+    if not items:
+        return items
+    prompt_head = (
+        "你是益生菌研发情报编辑。下面每行是一条内容，含来源提示和材料（摘要或报道正文）。行号从1开始。\n"
+        "对每条用中文写一段内容概括（≤60字，一句话讲清这条讲什么：研究了什么/结论是什么，或政策/事件讲了什么）。\n"
+        "要求: 只基于给出的材料，禁止编造；不要写『本文』『该研究』等开头；直接陈述内容。\n"
+        "对每条输出一行，格式严格为: 行号|概括\n"
+        "禁止输出任何解释、标题、空行、序号以外的文字。\n"
+        "=== 内容列表 ==="
+    )
+    BATCH = 5
+    result = {}
+    for start in range(0, len(items), BATCH):
+        batch = items[start:start + BATCH]
+        prompt = prompt_head
+        for j, it in enumerate(batch, 1):
+            src = it.get("source", "")
+            if src == "pubmed":
+                hint = "来源: PubMed 期刊文献"
+                mat = smart_abst(it.get("abstract") or "", 800)
+            elif src == "foodmate":
+                hint = "来源: 食品行业新闻"
+                mat = smart_abst(it.get("content") or "", 800)
+            elif src == "nhc":
+                hint = "来源: 卫健委公示"
+                mat = it.get("title", "")
+            else:
+                hint = "来源: 资讯"
+                mat = it.get("title", "")
+            prompt += f"\n{j}. [{hint}] 标题: {it.get('title','')}"
+            if mat:
+                prompt += f" 材料: {mat}"
+        try:
+            body = json.dumps({
+                "model": OLLAMA_MODEL,
+                "messages": [{"role": "user", "content": prompt}],
+                "stream": False,
+                "think": False,
+                "options": {"temperature": 0.2},
+            }).encode()
+            req = urllib.request.Request(OLLAMA_URL, data=body,
+                                         headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                doc = json.loads(resp.read())
+            content = doc.get("message", {}).get("content", "")
+        except Exception as e:
+            log.warning("Ollama 概括失败，降级截断: %s", e)
+            content = ""
+        for line in content.splitlines():
+            # LLM 可能把示例「行号」字面抄进输出(如 `1|行号|1|概括`),
+            # 取最后一个 | 之后的内容作为概括; 行首编号只用来定位行
+            parts = [p.strip() for p in line.split("|")]
+            if len(parts) < 2 or not parts[0].isdigit():
+                continue
+            idx = int(parts[0])
+            brief = parts[-1].strip().strip('"')
+            brief = re.sub(r"^行号\s*", "", brief)
+            if 1 <= idx <= len(batch) and brief:
+                result[id(batch[idx - 1])] = brief
+    # 合并回条目: 有 LLM 结果用之, 否则标题截断兜底
+    for it in items:
+        brief = result.get(id(it), "")
+        if not brief or len(brief) < 8:
+            # 兜底: 文献用摘要首句, 法规用标题
+            if it.get("source") == "pubmed":
+                abst = (it.get("abstract") or "").strip()
+                brief = abst[:60] + ("…" if len(abst) > 60 else "")
+            else:
+                brief = it.get("title", "")[:60]
+        it["brief"] = brief[:80]
+    log.info("内容概括完成 %d 条", len(items))
+    return items
 
 
 # ----------------------------------------------------------------------------
@@ -905,6 +1021,9 @@ def main() -> int:
         log.error("筛选后无条目")
         return 1
 
+    # 3.5) 内容概括: 所有入选条目（文献+法规）生成中文 brief
+    top = llm_brief(top)
+
     # 4) 渲染 + 存档
     today = date.today().isoformat()
     WIDGET_HTML.write_text(render_html(top, today), encoding="utf-8")
@@ -922,8 +1041,8 @@ def main() -> int:
         {"text": it["text"], "tag": it["tag"], "url": it["url"], "source": it["source"],
          "journal": it.get("journal", ""), "date": it.get("date", ""),
          "score": it.get("score"), "score_detail": it.get("score_detail"),
-         # 摘要要点: 取结论/结果段, 供滑动卡片展示重点信息
-         "abstract": smart_abst(it.get("abstract") or "", 320)}
+         # 中文内容概括 (≤60字), 滑动卡片下方展示
+         "brief": it.get("brief", "")}
         for it in top
     ]})
     DATA_JSON.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")

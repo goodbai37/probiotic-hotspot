@@ -124,7 +124,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
       return `<a class="card" style="left:${i * W}px;width:${W}px" href="${esc(it.url || "#")}" data-idx="${i}">
         <div class="tag" style="color:${tagColor};background:${tagBg}">${tagText}</div>
         <div class="title">${esc(it.text || it.title || "")}</div>
-        ${it.abstract ? `<div class="brief">💡 <span>${esc(it.abstract)}</span></div>` : ""}
+        ${it.brief ? `<div class="brief">💡 <span>${esc(it.brief)}</span></div>` : ""}
         <div class="meta">${esc([it.journal, it.date].filter(Boolean).join("  ·  "))}</div>
         <div class="score-wrap">
           <span class="score-label">热度</span>
