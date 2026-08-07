@@ -16,6 +16,7 @@
   /* deck: 绝对定位容器, 用 transform 翻页, 不依赖原生滚动 */
   #deck{
     position:fixed;left:0;top:0;width:100%;height:100%;
+    overflow:hidden;
     will-change:transform;
   }
   #deck.no-anim{transition:none !important}
@@ -101,7 +102,7 @@ const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"
       const tagColor = isReg ? "#d97706" : "#2563eb";
       const tagBg = isReg ? "rgba(217,119,6,.12)" : "rgba(37,99,235,.10)";
       const scoreColor = isReg ? "#d97706" : "#1f9d61";
-      return `<a class="card" href="${esc(it.url || "#")}" data-idx="${i}">
+      return `<a class="card" style="left:${i * 100}%" href="${esc(it.url || "#")}" data-idx="${i}">
         <div class="tag" style="color:${tagColor};background:${tagBg}">${tagText}</div>
         <div class="title">${esc(it.text || it.title || "")}</div>
         <div class="meta">${esc([it.journal, it.date].filter(Boolean).join("  ·  "))}</div>
