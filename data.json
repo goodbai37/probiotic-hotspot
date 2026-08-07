@@ -1,0 +1,343 @@
+[
+  {
+    "date": "2026-08-06",
+    "items": [
+      {
+        "text": "婴儿双歧杆菌CCFM1445促进骨骼生长",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42545608/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-03",
+        "score": 74,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "植物乳杆菌Probio87改善便秘",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42540505/",
+        "source": "pubmed",
+        "journal": "Frontiers in nutrition",
+        "date": "2026-07-17",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.5,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Lacticaseibacillus paracasei Jlus66降低尿酸",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42530645/",
+        "source": "pubmed",
+        "journal": "Archives of microbiology",
+        "date": "2026-07-30",
+        "score": 69,
+        "score_detail": {
+          "freshness": 0.77,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "乳双歧杆菌CRL1505改善呼吸道感染",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42544179/",
+        "source": "pubmed",
+        "journal": "Patient preference and adherence",
+        "date": "2026-07-29",
+        "score": 68,
+        "score_detail": {
+          "freshness": 0.74,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Enterococcus faecium MMX缓解结肠炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42531082/",
+        "source": "pubmed",
+        "journal": "Food & function",
+        "date": "2026-07-30",
+        "score": 68,
+        "score_detail": {
+          "freshness": 0.77,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "双歧杆菌ZFML0012缓解类风湿关节炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42554007/",
+        "source": "pubmed",
+        "journal": "Molecular nutrition & food research",
+        "date": "2026-08-01",
+        "score": 66,
+        "score_detail": {
+          "freshness": 0.82,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Faecalibacterium spp.调节微生态",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42551227/",
+        "source": "pubmed",
+        "journal": "Microbiological research",
+        "date": "2026-08-03",
+        "score": 61,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "肠道菌群调节SCFAs影响炎症疾病",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42535602/",
+        "source": "pubmed",
+        "journal": "Journal of investigational allergology & clinical immunology",
+        "date": "2026-07-31",
+        "score": 53,
+        "score_detail": {
+          "freshness": 0.79,
+          "journal": 0.4,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 0.3
+        }
+      },
+      {
+        "text": "新规迭代赋能产业升级 益生菌保健食品监管变革",
+        "tag": "法规动态",
+        "url": "https://news.foodmate.net/2026/08/749868.html",
+        "source": "foodmate",
+        "journal": "食品伙伴网",
+        "date": "2026-08-06",
+        "score": 88,
+        "score_detail": {
+          "freshness": 0.97,
+          "authority": 0.6,
+          "relevance": 0.4
+        }
+      },
+      {
+        "text": "答复|关于《食品委托生产监督管理办法》实施后",
+        "tag": "法规动态",
+        "url": "https://news.foodmate.net/2026/08/749949.html",
+        "source": "foodmate",
+        "journal": "食品伙伴网",
+        "date": "2026-08-06",
+        "score": 82,
+        "score_detail": {
+          "freshness": 0.97,
+          "authority": 0.6,
+          "relevance": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "date": "2026-08-07",
+    "items": [
+      {
+        "text": "婴儿双歧杆菌CCFM1445促进骨生长",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42545608/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-03",
+        "score": 73,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Bacillus thuringiensis h10改善代谢协调",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42545607/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-03",
+        "score": 73,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Bifidobacterium longum ZFML0012缓解类风湿性关节炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42554007/",
+        "source": "pubmed",
+        "journal": "Molecular nutrition & food research",
+        "date": "2026-08-01",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.82,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "植物乳杆菌Probio87改善便秘症状",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42540505/",
+        "source": "pubmed",
+        "journal": "Frontiers in nutrition",
+        "date": "2026-07-17",
+        "score": 70,
+        "score_detail": {
+          "freshness": 0.5,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Escherichia coli Nissle 1917改善肠道通透性",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42544624/",
+        "source": "pubmed",
+        "journal": "Minerva gastroenterology",
+        "date": "2026-08-03",
+        "score": 67,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.4,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Lactiplantibacillus plantarum C10改善神经保护",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42558392/",
+        "source": "pubmed",
+        "journal": "Frontiers in nutrition",
+        "date": "2026-07-22",
+        "score": 60,
+        "score_detail": {
+          "freshness": 0.59,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Faecalibacterium spp.增强肠道屏障",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42551227/",
+        "source": "pubmed",
+        "journal": "Microbiological research",
+        "date": "2026-08-03",
+        "score": 60,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "Limosilactobacillus reuteri R30改善肠道健康",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42556050/",
+        "source": "pubmed",
+        "journal": "Poultry science",
+        "date": "2026-07-17",
+        "score": 57,
+        "score_detail": {
+          "freshness": 0.5,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        }
+      },
+      {
+        "text": "双歧杆菌FS2-3改善肠炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42560463/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-06",
+        "score": 48,
+        "score_detail": {
+          "freshness": 0.97,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 0.3
+        }
+      },
+      {
+        "text": "新规迭代赋能产业升级 益生菌保健食品监管变革",
+        "tag": "法规动态",
+        "url": "https://news.foodmate.net/2026/08/749868.html",
+        "source": "foodmate",
+        "journal": "食品伙伴网",
+        "date": "2026-08-06",
+        "score": 88,
+        "score_detail": {
+          "freshness": 1.0,
+          "authority": 0.6,
+          "relevance": 0.4
+        }
+      }
+    ]
+  }
+]
