@@ -561,5 +561,190 @@
         "brief": "新规明确益生菌需活菌数量达标，提高产品质量要求，推动纳入保健食品原料目录"
       }
     ]
+  },
+  {
+    "date": "2026-08-09",
+    "items": [
+      {
+        "text": "Eubacterium rectale降低肠道炎症",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42563165/",
+        "source": "pubmed",
+        "journal": "Microbiome",
+        "date": "2026-08-04",
+        "score": 73,
+        "score_detail": {
+          "freshness": 0.85,
+          "journal": 1.0,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "Eubacterium rectale produces glutathione to reduce oxidative stress and aid inte"
+      },
+      {
+        "text": "婴儿双歧杆菌CCFM1445促进骨生长",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42545608/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-03",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.82,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "B. longum subsp. infantis CCFM1445 boosts bone growth via gut microbiota and arg"
+      },
+      {
+        "text": "Bacillus thuringiensis h10改善代谢协调",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42545607/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-03",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.82,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "Bacillus sp. modulates multi-tissue metabolism through gut microbiota changes in"
+      },
+      {
+        "text": "Bifidobacterium longum ZFML0012缓解类风湿性关节炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42554007/",
+        "source": "pubmed",
+        "journal": "Molecular nutrition & food research",
+        "date": "2026-08-01",
+        "score": 70,
+        "score_detail": {
+          "freshness": 0.77,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "Heat-killed B. longum reduces RA via gut-joint axis by altering microbiota and i"
+      },
+      {
+        "text": "Lactobacillus rhamnosus CRL1505与Bifidobacterium breve改善呼吸道感染",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42544179/",
+        "source": "pubmed",
+        "journal": "Patient preference and adherence",
+        "date": "2026-07-29",
+        "score": 66,
+        "score_detail": {
+          "freshness": 0.69,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "Probiotics reduce RTI burden and improve quality of life in children in real-wor"
+      },
+      {
+        "text": "Lactiplantibacillus plantarum C10改善神经保护",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42558392/",
+        "source": "pubmed",
+        "journal": "Frontiers in nutrition",
+        "date": "2026-07-22",
+        "score": 65,
+        "score_detail": {
+          "freshness": 0.55,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "L. plantarum C10-derived SCFAs show neuroprotective effects against Parkinson's "
+      },
+      {
+        "text": "Escherichia coli Nissle 1917改善肠道通透性",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42544624/",
+        "source": "pubmed",
+        "journal": "Minerva gastroenterology",
+        "date": "2026-08-03",
+        "score": 65,
+        "score_detail": {
+          "freshness": 0.82,
+          "journal": 0.4,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "EcN improves gut microbiota composition and intestinal permeability in ulcerativ"
+      },
+      {
+        "text": "Limosilactobacillus reuteri R30改善肠道健康",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42556050/",
+        "source": "pubmed",
+        "journal": "Poultry science",
+        "date": "2026-07-17",
+        "score": 63,
+        "score_detail": {
+          "freshness": 0.47,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "L. reuteri R30 and C. solani Y5 enhance chicken growth and intestinal health by "
+      },
+      {
+        "text": "乳杆菌MM-1改善近视",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42565253/",
+        "source": "pubmed",
+        "journal": "Microbial biotechnology",
+        "date": "2026-08-01",
+        "score": 60,
+        "score_detail": {
+          "freshness": 0.77,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "L. mucosae MM-1 metabolite ILA reduces lens-induced myopia via TGF-β/Smad pathwa"
+      },
+      {
+        "text": "乳杆菌LC可改善骨质流失",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42565847/",
+        "source": "pubmed",
+        "journal": "Archives of microbiology",
+        "date": "2026-08-07",
+        "score": 58,
+        "score_detail": {
+          "freshness": 0.94,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "LC and CV combination prevents postmenopausal bone loss in ovariectomized rats t"
+      }
+    ]
   }
 ]
