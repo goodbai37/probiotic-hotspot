@@ -746,5 +746,187 @@
         "brief": "LC and CV combination prevents postmenopausal bone loss in ovariectomized rats t"
       }
     ]
+  },
+  {
+    "date": "2026-08-10",
+    "items": [
+      {
+        "text": "B. longum subsp. infantis CCFM1445促进骨生长",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42545608/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-03",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.79,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "益生菌B. longum subsp. infantis促进小鼠骨骼生长，通过调节肠道菌群和精氨酸代谢途径。"
+      },
+      {
+        "text": "Bacillus thuringiensis h10调节多组织代谢",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42545607/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-03",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.79,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "Bacillus sp.通过调节肠道菌群改善高脂饮食下多组织代谢，提升生长性能。"
+      },
+      {
+        "text": "鼠李糖乳杆菌ZFML0012改善类风湿性关节炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42554007/",
+        "source": "pubmed",
+        "journal": "Molecular nutrition & food research",
+        "date": "2026-08-01",
+        "score": 70,
+        "score_detail": {
+          "freshness": 0.74,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "热灭活益生菌B. longum通过调节肠道-关节轴缓解类风湿性关节炎，改善免疫平衡。"
+      },
+      {
+        "text": "Escherichia coli Nissle 1917改善肠道菌群",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42544624/",
+        "source": "pubmed",
+        "journal": "Minerva gastroenterology",
+        "date": "2026-08-03",
+        "score": 65,
+        "score_detail": {
+          "freshness": 0.79,
+          "journal": 0.4,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "EcN改善溃疡性结肠炎患者肠道菌群组成及通透性，提升菌群多样性和分类学特征。"
+      },
+      {
+        "text": "益生菌外泌体可能缓解IBD",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42567355/",
+        "source": "pubmed",
+        "journal": "Journal of advanced research",
+        "date": "2026-08-07",
+        "score": 64,
+        "score_detail": {
+          "freshness": 0.91,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌胞外囊泡在治疗炎症性肠病中具潜力，但需解决生产、纯化及靶向性等挑战。"
+      },
+      {
+        "text": "乳酸杆菌MM-1代谢物ILA改善近视",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42565253/",
+        "source": "pubmed",
+        "journal": "Microbial biotechnology",
+        "date": "2026-08-01",
+        "score": 60,
+        "score_detail": {
+          "freshness": 0.74,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "研究发现L. mucosae MM-1代谢产物ILA通过调控TGF-β/Smad通路减轻小鼠屈光不正。"
+      },
+      {
+        "text": "乳酸杆菌LC联合微藻CV改善骨质流失",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42565847/",
+        "source": "pubmed",
+        "journal": "Archives of microbiology",
+        "date": "2026-08-07",
+        "score": 57,
+        "score_detail": {
+          "freshness": 0.91,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "LC与CV组合治疗可有效预防绝经后骨质流失，优于单一治疗。"
+      },
+      {
+        "text": "MOLP-2改善DSS诱导的结肠炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42562457/",
+        "source": "pubmed",
+        "journal": "Food research international (Ottawa, Ont.)",
+        "date": "2026-06-02",
+        "score": 56,
+        "score_detail": {
+          "freshness": 0.1,
+          "journal": 0.8,
+          "cited": 0.25,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "Moringa叶酸多糖通过调节肠道菌群代谢缓解DSS诱导的结肠炎。"
+      },
+      {
+        "text": "FS2-3减轻肠炎组织损伤",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42560463/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-06",
+        "score": 52,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 0.3
+        },
+        "brief": "含B. adolescentis FS2-3的微胶囊可抑制多种病原体引发的肠炎。"
+      },
+      {
+        "text": "新规迭代赋能产业升级 益生菌保健食品监管变革",
+        "tag": "法规动态",
+        "url": "https://news.foodmate.net/2026/08/749868.html",
+        "source": "foodmate",
+        "journal": "食品伙伴网",
+        "date": "2026-08-06",
+        "score": 82,
+        "score_detail": {
+          "freshness": 0.88,
+          "authority": 0.6,
+          "relevance": 1.0
+        },
+        "brief": "新规明确益生菌需活菌数量达标，推动其纳入保健食品原料目录管理。"
+      }
+    ]
   }
 ]
