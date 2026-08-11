@@ -928,5 +928,187 @@
         "brief": "新规明确益生菌需活菌数量达标，推动其纳入保健食品原料目录管理。"
       }
     ]
+  },
+  {
+    "date": "2026-08-11",
+    "items": [
+      {
+        "text": "鼠李糖乳杆菌ZFML0012改善类风湿性关节炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42554007/",
+        "source": "pubmed",
+        "journal": "Molecular nutrition & food research",
+        "date": "2026-08-01",
+        "score": 69,
+        "score_detail": {
+          "freshness": 0.72,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "热灭活双歧杆菌通过调节肠道-关节轴缓解类风湿性关节炎"
+      },
+      {
+        "text": "Bifidobacterium adolescentis FS2-3减轻肠炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42560463/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-06",
+        "score": 65,
+        "score_detail": {
+          "freshness": 0.85,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "双歧杆菌FS2-3微胶囊对多种病原体引起的肠炎有保护作用"
+      },
+      {
+        "text": "乳酸杆菌MM-1代谢物改善近视",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42565253/",
+        "source": "pubmed",
+        "journal": "Microbial biotechnology",
+        "date": "2026-08-01",
+        "score": 59,
+        "score_detail": {
+          "freshness": 0.72,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "乳酸杆菌代谢产物吲哚-3-乳酸酸减轻小鼠屈光不正"
+      },
+      {
+        "text": "乳酸杆菌LC联合微藻CV改善骨质流失",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42565847/",
+        "source": "pubmed",
+        "journal": "Archives of microbiology",
+        "date": "2026-08-07",
+        "score": 57,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌乳酸杆菌与微藻组合预防绝经后骨质流失"
+      },
+      {
+        "text": "MOLP-2改善DSS诱导的溃疡性结肠炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42562457/",
+        "source": "pubmed",
+        "journal": "Food research international (Ottawa, Ont.)",
+        "date": "2026-06-02",
+        "score": 56,
+        "score_detail": {
+          "freshness": 0.1,
+          "journal": 0.8,
+          "cited": 0.25,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "莫里歌叶酸多糖通过调节肠道菌群缓解结肠炎"
+      },
+      {
+        "text": "新规迭代赋能产业升级 益生菌保健食品监管变革",
+        "tag": "法规动态",
+        "url": "https://news.foodmate.net/2026/08/749868.html",
+        "source": "foodmate",
+        "journal": "食品伙伴网",
+        "date": "2026-08-06",
+        "score": 80,
+        "score_detail": {
+          "freshness": 0.85,
+          "authority": 0.6,
+          "relevance": 1.0
+        },
+        "brief": "益生菌保健食品新规修订，明确活菌数量要求并推进原料目录管理"
+      },
+      {
+        "text": "益生菌用于妇科癌症治疗",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42570745/",
+        "source": "pubmed",
+        "journal": "Critical reviews in oncology/hematology",
+        "date": "2026-08-08",
+        "score": 64,
+        "score_detail": {
+          "freshness": 0.91,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "阴道微生物组与妇科癌症诊断治疗相关，需标准化生物标志物"
+      },
+      {
+        "text": "益生菌外囊泡可缓解炎症性肠病",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42567355/",
+        "source": "pubmed",
+        "journal": "Journal of advanced research",
+        "date": "2026-08-07",
+        "score": 63,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌外泌体在炎症性肠病治疗中潜力大，但生产与安全性仍需突破"
+      },
+      {
+        "text": "粪杆菌降低肠道氧化应激",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42563165/",
+        "source": "pubmed",
+        "journal": "Microbiome",
+        "date": "2026-08-04",
+        "score": 58,
+        "score_detail": {
+          "freshness": 0.79,
+          "journal": 1.0,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 0.3
+        },
+        "brief": "肠道菌群产生的谷胱甘肽可缓解氧化应激，促进肠道修复"
+      },
+      {
+        "text": "益生菌调节子宫内膜异位症免疫",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42550338/",
+        "source": "pubmed",
+        "journal": "Molecular biology reports",
+        "date": "2026-08-04",
+        "score": 57,
+        "score_detail": {
+          "freshness": 0.79,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "子宫内膜异位症与肠道菌群关联密切，益生菌等疗法具研究潜力"
+      }
+    ]
   }
 ]
