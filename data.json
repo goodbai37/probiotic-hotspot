@@ -1295,5 +1295,190 @@
         "brief": "含B. adolescentis FS2-3的微胶囊可抑制多种病原体引发的肠炎。"
       }
     ]
+  },
+  {
+    "date": "2026-08-14",
+    "items": [
+      {
+        "text": "Bifidobacterium pseudolongum改善肝损伤",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42586225/",
+        "source": "pubmed",
+        "journal": "Pharmacological research",
+        "date": "2026-08-12",
+        "score": 68,
+        "score_detail": {
+          "freshness": 0.94,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "研究发现DAT通过调控MAPK/铁死亡轴和双歧杆菌减轻肝缺血再灌注损伤。"
+      },
+      {
+        "text": "鼠李糖乳杆菌SMH17减轻气道炎症",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42577588/",
+        "source": "pubmed",
+        "journal": "ERJ open research",
+        "date": "2026-08-10",
+        "score": 66,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "肺内给药L. murinus减少CF样肺病小鼠气道炎症和黏液堵塞。"
+      },
+      {
+        "text": "Faecalibacterium spp.产丁酸",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42551227/",
+        "source": "pubmed",
+        "journal": "Microbiological research",
+        "date": "2026-08-03",
+        "score": 65,
+        "score_detail": {
+          "freshness": 0.69,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "通过微生态调控和配方工程优化Faecalibacterium spp.的临床应用。"
+      },
+      {
+        "text": "Limosilactobacillus reuteri改善肠道屏障",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42585802/",
+        "source": "pubmed",
+        "journal": "Research in veterinary science",
+        "date": "2026-08-06",
+        "score": 64,
+        "score_detail": {
+          "freshness": 0.77,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "合生元和后生元reuterin改善兔子热应激下的肠道屏障功能。"
+      },
+      {
+        "text": "Lactobacillus plantarum减轻肠道炎症",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42584533/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-12",
+        "score": 61,
+        "score_detail": {
+          "freshness": 0.94,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "L. plantarum减轻实验性克罗恩病肠道炎症并延长缓解期。"
+      },
+      {
+        "text": "Enterococcus lactis SF68改善肠道屏障完整性",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589287/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-07-25",
+        "score": 58,
+        "score_detail": {
+          "freshness": 0.51,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "研究显示含Enterococcus lactis的混合物可修复肠道屏障，缓解炎症后IBS症状。"
+      },
+      {
+        "text": "Hafnia alvei 4597降低体脂",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589617/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-08-03",
+        "score": 55,
+        "score_detail": {
+          "freshness": 0.69,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "Hafnia alvei 4597益生菌通过 melanocortin 受体信号改善肥胖和葡萄糖耐受。"
+      },
+      {
+        "text": "多菌株合生元改善ASD症状",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42588064/",
+        "source": "pubmed",
+        "journal": "Nutrients",
+        "date": "2026-07-26",
+        "score": 50,
+        "score_detail": {
+          "freshness": 0.53,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.6
+        },
+        "brief": "多菌株合生元改善墨西哥自闭症儿童临床症状并重塑肠道菌群。"
+      },
+      {
+        "text": "双歧杆菌BB_Y10增强黏附能力",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42587920/",
+        "source": "pubmed",
+        "journal": "Foods (Basel, Switzerland)",
+        "date": "2026-07-29",
+        "score": 46,
+        "score_detail": {
+          "freshness": 0.59,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "婴儿粪便中分离的Bifidobacterium bifidum菌株具有强粘附性和抗病原体能力。"
+      },
+      {
+        "text": "益生菌V10抑制K. pneumoniae",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42573249/",
+        "source": "pubmed",
+        "journal": "mBio",
+        "date": "2026-08-10",
+        "score": 63,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌在新生儿肠道中通过生态机制预防感染，关键因素包括生态位占据和资源竞争。"
+      }
+    ]
   }
 ]
