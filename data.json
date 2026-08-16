@@ -1665,5 +1665,190 @@
         "brief": "喀麦隆Garoua地区阴道感染高发且耐药严重，分离的乳酸菌具潜在益生菌开发价值。"
       }
     ]
+  },
+  {
+    "date": "2026-08-16",
+    "items": [
+      {
+        "text": "乳酸杆菌ZFM820缓解结肠炎",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42596741/",
+        "source": "pubmed",
+        "journal": "Food & function",
+        "date": "2026-08-14",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.94,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "L. brevis ZFM820调节肠道硫平衡缓解Desulfovibrio引发的结肠炎"
+      },
+      {
+        "text": "Enterococcus lactis SF68恢复肠道屏障",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589287/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-07-25",
+        "score": 68,
+        "score_detail": {
+          "freshness": 0.48,
+          "journal": 0.8,
+          "cited": 0.25,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "含Enterococcus lactis的混合物修复DSS诱导的IBS样症状"
+      },
+      {
+        "text": "Hafnia alvei 4597改善葡萄糖耐受",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589617/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-08-03",
+        "score": 64,
+        "score_detail": {
+          "freshness": 0.65,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "Hafnia alvei 4597通过MCR信号改善肥胖和葡萄糖耐受"
+      },
+      {
+        "text": "双歧杆菌BB_Y10增强病原体拮抗",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42587920/",
+        "source": "pubmed",
+        "journal": "Foods (Basel, Switzerland)",
+        "date": "2026-07-29",
+        "score": 55,
+        "score_detail": {
+          "freshness": 0.55,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "婴儿粪便中分离的B. bifidum菌株具有强粘附和抗病原体能力"
+      },
+      {
+        "text": "乳酸杆菌3×pBD1/ΔHLJ-27促进生长",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42599973/",
+        "source": "pubmed",
+        "journal": "PLoS pathogens",
+        "date": "2026-08-14",
+        "score": 52,
+        "score_detail": {
+          "freshness": 0.94,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "工程L. paracasei 3×pBD1/ΔHLJ-27作为抗生素替代品促进生长并抗沙门氏菌感染"
+      },
+      {
+        "text": "益生菌调节热应激MGBA",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42602487/",
+        "source": "pubmed",
+        "journal": "Frontiers in physiology",
+        "date": "2026-07-31",
+        "score": 43,
+        "score_detail": {
+          "freshness": 0.59,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "热应激影响微生物-肠-脑轴，研究提出益生菌等疗法重塑肠道生态。"
+      },
+      {
+        "text": "益生菌治疗IBD研究",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42602883/",
+        "source": "pubmed",
+        "journal": "Asian journal of pharmaceutical sciences",
+        "date": "2026-07-18",
+        "score": 38,
+        "score_detail": {
+          "freshness": 0.38,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌在炎症性肠病治疗中潜力大，需深入研究其作用机制。"
+      },
+      {
+        "text": "双歧杆菌 pseudolongum减轻肝缺血再灌注损伤",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42586225/",
+        "source": "pubmed",
+        "journal": "Pharmacological research",
+        "date": "2026-08-12",
+        "score": 67,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 1.0,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "脱氨酪氨酸通过调节双歧杆菌减轻肝缺血再灌注损伤。"
+      },
+      {
+        "text": "益生菌降低儿童肥胖风险",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42588161/",
+        "source": "pubmed",
+        "journal": "Nutrients",
+        "date": "2026-08-04",
+        "score": 65,
+        "score_detail": {
+          "freshness": 0.67,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 1.0,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌对儿童肥胖相关指标影响不显著，需更多高质量研究。"
+      },
+      {
+        "text": "益生菌改善缺铁性贫血",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42597309/",
+        "source": "pubmed",
+        "journal": "Frontiers in nutrition",
+        "date": "2026-07-30",
+        "score": 59,
+        "score_detail": {
+          "freshness": 0.57,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 1.0,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌辅助治疗缺铁性贫血有效，但不宜单独使用。"
+      }
+    ]
   }
 ]
