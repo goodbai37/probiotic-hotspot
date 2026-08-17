@@ -1850,5 +1850,190 @@
         "brief": "益生菌辅助治疗缺铁性贫血有效，但不宜单独使用。"
       }
     ]
+  },
+  {
+    "date": "2026-08-17",
+    "items": [
+      {
+        "text": "Lactobacillus brevis ZFM820改善肠道硫平衡",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42596741/",
+        "source": "pubmed",
+        "journal": "Food & function",
+        "date": "2026-08-14",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.91,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "L. brevis ZFM820调节肠道硫平衡缓解Desulfovibrio引发的结肠炎"
+      },
+      {
+        "text": "Lactobacillus casei提升抗氧化状态",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42595814/",
+        "source": "pubmed",
+        "journal": "Scientific reports",
+        "date": "2026-08-13",
+        "score": 71,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "益生菌替代抗生素提升肉鸡健康与肠道菌群平衡"
+      },
+      {
+        "text": "Enterococcus lactis SF68改善肠道屏障",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589287/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-07-25",
+        "score": 68,
+        "score_detail": {
+          "freshness": 0.47,
+          "journal": 0.8,
+          "cited": 0.25,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "含Enterococcus lactis的混合物修复肠道屏障缓解IBS症状"
+      },
+      {
+        "text": "Lactobacillus plantarum减轻肠道炎症",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42584533/",
+        "source": "pubmed",
+        "journal": "Probiotics and antimicrobial proteins",
+        "date": "2026-08-12",
+        "score": 65,
+        "score_detail": {
+          "freshness": 0.85,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "L. plantarum减轻肠道炎症延长克罗恩病缓解期"
+      },
+      {
+        "text": "Hafnia alvei 4597改善葡萄糖耐受",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589617/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-08-03",
+        "score": 64,
+        "score_detail": {
+          "freshness": 0.63,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "Hafnia alvei通过黑色素皮质素受体改善肥胖与葡萄糖耐受"
+      },
+      {
+        "text": "Limosilactobacillus reuteri改善肠道屏障功能",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42585802/",
+        "source": "pubmed",
+        "journal": "Research in veterinary science",
+        "date": "2026-08-06",
+        "score": 64,
+        "score_detail": {
+          "freshness": 0.69,
+          "journal": 0.4,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "益生菌、益生元和后生元缓解兔子热应激，改善肠道屏障和免疫反应。"
+      },
+      {
+        "text": "Bacillus coagulans增强抗感染能力",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42593707/",
+        "source": "pubmed",
+        "journal": "Veterinary research communications",
+        "date": "2026-08-13",
+        "score": 62,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.4,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "椭agic酸与芽孢杆菌联合提升鱼生长、免疫及抗病能力。"
+      },
+      {
+        "text": "乳酸杆菌3×pBD1/ΔHLJ-27抗感染",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42599973/",
+        "source": "pubmed",
+        "journal": "PLoS pathogens",
+        "date": "2026-08-14",
+        "score": 61,
+        "score_detail": {
+          "freshness": 0.91,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "工程乳酸菌兼具促生长与抗沙门氏菌作用，替代抗生素。"
+      },
+      {
+        "text": "双歧杆菌BB_Y10增强抗病能力",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42587920/",
+        "source": "pubmed",
+        "journal": "Foods (Basel, Switzerland)",
+        "date": "2026-07-29",
+        "score": 54,
+        "score_detail": {
+          "freshness": 0.53,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "婴儿粪便中分离的双歧杆菌黏附性强，可抑制病原体。"
+      },
+      {
+        "text": "Clostridium butyricum-pMTL007-GLP-1改善运动功能",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42599178/",
+        "source": "pubmed",
+        "journal": "Journal of Zhejiang University. Science. B",
+        "date": "2026-06-27",
+        "score": 46,
+        "score_detail": {
+          "freshness": 0.18,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "工程丁酸梭菌通过PI3K/AKT/GSK-3β通路改善帕金森小鼠神经功能。"
+      }
+    ]
   }
 ]
