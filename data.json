@@ -2220,5 +2220,190 @@
         "brief": "工程化Clostridium butyricum通过PI3K/AKT/GSK-3β通路显著改善帕金森小鼠神经功能。"
       }
     ]
+  },
+  {
+    "date": "2026-08-19",
+    "items": [
+      {
+        "text": "Lactobacillus brevis ZFM820改善肠道硫平衡",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42596741/",
+        "source": "pubmed",
+        "journal": "Food & function",
+        "date": "2026-08-14",
+        "score": 69,
+        "score_detail": {
+          "freshness": 0.85,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "L. brevis ZFM820调节肠道硫平衡缓解Desulfovibrio引发的结肠炎"
+      },
+      {
+        "text": "Lactobacillus casei提升抗氧化状态",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42595814/",
+        "source": "pubmed",
+        "journal": "Scientific reports",
+        "date": "2026-08-13",
+        "score": 69,
+        "score_detail": {
+          "freshness": 0.82,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "益生菌替代抗生素提升肉鸡健康与肠道菌群平衡"
+      },
+      {
+        "text": "Enterococcus lactis SF68改善肠道屏障",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589287/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-07-25",
+        "score": 67,
+        "score_detail": {
+          "freshness": 0.43,
+          "journal": 0.8,
+          "cited": 0.25,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 1.0
+        },
+        "brief": "含Enterococcus lactis的混合物修复肠道屏障缓解IBS症状"
+      },
+      {
+        "text": "Hafnia alvei 4597改善葡萄糖耐受",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42589617/",
+        "source": "pubmed",
+        "journal": "International journal of molecular sciences",
+        "date": "2026-08-03",
+        "score": 63,
+        "score_detail": {
+          "freshness": 0.59,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "Hafnia alvei通过 melanocortin 受体改善肥胖与葡萄糖耐受"
+      },
+      {
+        "text": "布拉氏酵母菌联合双歧杆菌四联活菌降低婴幼儿AAD",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42608299/",
+        "source": "pubmed",
+        "journal": "Zhongguo dang dai er ke za zhi = Chinese journal of contemporary pediatrics",
+        "date": "2026-08-15",
+        "score": 60,
+        "score_detail": {
+          "freshness": 0.88,
+          "journal": 0.3,
+          "cited": 0.15,
+          "evidence": 0.95,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "布拉氏酵母菌与双歧杆菌联用有效预防抗生素相关性腹泻"
+      },
+      {
+        "text": "乳酸杆菌3×pBD1/ΔHLJ-27抗感染",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42599973/",
+        "source": "pubmed",
+        "journal": "PLoS pathogens",
+        "date": "2026-08-14",
+        "score": 60,
+        "score_detail": {
+          "freshness": 0.85,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "研究开发了新型益生菌替代抗生素，兼具促生长和抗沙门氏菌感染能力。"
+      },
+      {
+        "text": "Bacillus coagulans增强抗感染能力",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42593707/",
+        "source": "pubmed",
+        "journal": "Veterinary research communications",
+        "date": "2026-08-13",
+        "score": 60,
+        "score_detail": {
+          "freshness": 0.82,
+          "journal": 0.4,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 0.3,
+          "specificity": 1.0
+        },
+        "brief": "联合使用没食子酸和芽孢杆菌显著提升条纹鱼生长和抗感染能力。"
+      },
+      {
+        "text": "益生菌改善IDA血红蛋白水平",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42597309/",
+        "source": "pubmed",
+        "journal": "Frontiers in nutrition",
+        "date": "2026-07-30",
+        "score": 57,
+        "score_detail": {
+          "freshness": 0.51,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 1.0,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "益生菌对儿童缺铁性贫血有一定辅助作用，但效果有限且安全性待明确。"
+      },
+      {
+        "text": "益生菌调节菌群改善GDM",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42597775/",
+        "source": "pubmed",
+        "journal": "Frontiers in microbiology",
+        "date": "2026-07-30",
+        "score": 52,
+        "score_detail": {
+          "freshness": 0.51,
+          "journal": 0.8,
+          "cited": 0.15,
+          "evidence": 0.35,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "肠道菌群与妊娠糖尿病关系密切，需多组学研究推动个性化干预策略。"
+      },
+      {
+        "text": "益生菌关联CP肠道功能",
+        "tag": "相关文献",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42597189/",
+        "source": "pubmed",
+        "journal": "Frontiers in medicine",
+        "date": "2026-07-30",
+        "score": 50,
+        "score_detail": {
+          "freshness": 0.51,
+          "journal": 0.6,
+          "cited": 0.15,
+          "evidence": 0.5,
+          "focus": 1.0,
+          "specificity": 0.3
+        },
+        "brief": "肠道微生物群与脑瘫的机制关联尚不明确，需进一步验证干预靶点。"
+      }
+    ]
   }
 ]
